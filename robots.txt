@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://cloudxai.io/sitemap.xml
+Sitemap: https://cloudaisolutions.org/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
