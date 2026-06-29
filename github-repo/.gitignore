@@ -1,0 +1,143 @@
+# Secrets and Credentials
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.json
+config.json
+serviceAccount.json
+
+# AWS
+.aws/
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+*.tfvars
+terraform.tfplan
+.terraformrc
+terraform.rc
+
+# Azure
+.azure/
+*.publishsettings
+.azureauth/
+
+# GCP
+*-credentials.json
+gcp-key.json
+
+# API Keys and Tokens
+*_token
+*_key
+*_secret
+.token
+.credentials
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# Build artifacts
+dist/
+build/
+*.zip
+*.tar.gz
+*.jar
+*.war
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Private documentation
+PRIVATE*.md
+*-private.md
+
+# Test data
+test-data/
+sample-data/
+
+# Coverage reports
+coverage/
+.coverage
+*.cover
+htmlcov/
+
+# Documentation build
+_build/
+.doctrees/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Keep empty directories
+!.gitkeep
+
+# Allow specific important files even if they match patterns above
+!README.md
+!DEPLOY.md
+!LICENSE
+!.gitignore

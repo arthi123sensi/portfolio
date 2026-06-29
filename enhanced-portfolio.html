@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthi Raj - AI Cloud Architect & DevOps Expert | CloudXAI</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CloudXAI - Expert AI Cloud Solutions, AWS Bedrock, Azure DevOps, Self-Healing CI/CD, AI Automation. Arthi Raj specializes in cloud architecture, AI/ML integration, and intelligent automation solutions.">
+    <meta name="keywords" content="AI Cloud Architect, AWS Bedrock, Azure DevOps, AI Automation, Self-Healing CI/CD, Cloud Solutions, Machine Learning, DevOps Expert, Terraform, Kubernetes, AI Integration, Cloud Migration, Serverless Architecture, React Native, Full Stack Developer, CloudXAI">
+    <meta name="author" content="Arthi Raj">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Arthi Raj - AI Cloud Architect & DevOps Expert | CloudXAI">
+    <meta property="og:description" content="Expert in AI-powered cloud solutions, AWS Bedrock, self-healing CI/CD, and intelligent automation. Transform your infrastructure with CloudXAI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cloudxai.io">
+    <meta property="og:image" content="https://cloudxai.io/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arthi Raj - AI Cloud Architect | CloudXAI">
+    <meta name="twitter:description" content="Expert in AI-powered cloud solutions, AWS Bedrock, and intelligent automation">
+    <meta name="twitter:image" content="https://cloudxai.io/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cloudxai.io">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatBubbles {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        /* Single Continuous Sliding Marquee - Visible in Hero */
+        .marquee-container {
+            position: absolute;
+            width: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+            bottom: 5%;
+        }
+
+        .marquee {
+            display: flex;
+            width: fit-content;
+            animation: scroll 35s linear infinite;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 2rem;
+            font-size: 1.3rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            text-transform: none;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .marquee-icon {
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        .marquee-dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: navSlideDown 0.6s ease;
+        }
+
+        @keyframes navSlideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-auth {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .auth-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .auth-btn.login {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .auth-btn.login:hover {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .auth-btn.signup {
+            background: linear-gradient(135deg, #ec4899, #f093fb);
+            color: white;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+        }
+
+        .auth-btn.signup:hover {
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Hero Section - Animated Banner */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+            padding-top: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBubbles 15s ease-in-out infinite;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            color: #ffffff;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s both;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+
+        .cert-badge {
+            background: #f9fafb;
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: #1f2937;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(102, 126, 234, 0.1) 50%,
+                transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cert-badge:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .cert-icon {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .cert-badge strong {
+            color: #1f2937;
+            text-shadow: none;
+            font-size: 1.1rem;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .cert-badge div {
+            color: #6b7280;
+            text-shadow: none;
+        }
+
+        .hero .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .hero .stat {
+            text-align: center;
+        }
+
+        .hero .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            color: #ffffff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Showcase Banner - Single Row */
+        .services-banner {
+            background: transparent;
+            padding: 2rem 0;
+            margin: 3rem 0 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-banner h2 {
+            color: #ffffff !important;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            background: none !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            flex: 0 1 auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        .service-card p {
+            display: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f3f4f6;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 2rem auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Floating Particles Animation */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .particle {
+            animation: float 15s infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            width: 10px;
+            height: 10px;
+            background: rgba(102, 126, 234, 0.5);
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(2) {
+            left: 30%;
+            width: 15px;
+            height: 15px;
+            background: rgba(236, 72, 153, 0.5);
+            animation-delay: 2s;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(3) {
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: rgba(168, 85, 247, 0.5);
+            animation-delay: 4s;
+            animation-duration: 16s;
+        }
+
+        .particle:nth-child(4) {
+            left: 70%;
+            width: 12px;
+            height: 12px;
+            background: rgba(79, 172, 254, 0.5);
+            animation-delay: 6s;
+            animation-duration: 13s;
+        }
+
+        .particle:nth-child(5) {
+            left: 90%;
+            width: 10px;
+            height: 10px;
+            background: rgba(240, 147, 251, 0.5);
+            animation-delay: 8s;
+            animation-duration: 15s;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 2px solid #f1f5f9;
+            animation: cardSlideIn 0.6s ease-out both;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes cardSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3),
+                        0 0 30px rgba(236, 72, 153, 0.2);
+            border-color: #667eea;
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
+            color: white;
+            position: relative;
+            min-height: 120px;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: white;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .project-subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            color: #080000;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .project-features li {
+            padding: 0.5rem 0;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: #f1f5f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-link {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .project-link:hover {
+            background: var(--secondary);
+        }
+
+        .project-link.locked {
+            background: var(--warning);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--dark);
+        }
+
+        .modal h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 70%);
+            transform: rotate(45deg);
+            animation: buttonShine 3s infinite;
+        }
+
+        @keyframes buttonShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Architecture Section */
+        .architecture-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .architecture-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid #f1f5f9;
+        }
+
+        .architecture-card.locked {
+            position: relative;
+            filter: blur(5px);
+            pointer-events: none;
+        }
+
+        .architecture-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            filter: none;
+        }
+
+        .unlock-btn {
+            background: var(--warning);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            margin: 1rem auto;
+        }
+
+        .unlock-btn:hover {
+            background: #d97706;
+        }
+
+        .architecture-diagram {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .architecture-diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Skills Grid - Enhanced */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .skill-category:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+        }
+
+        .skill-category h3 span {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #374151;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+            animation: slideUp 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #764ba2 0%, #ec4899 50%, #fb923c 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            background: linear-gradient(135deg, #ffffff, #fde68a, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            font-weight: 900;
+            animation: gradientText 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Trust Indicators / Partners Section */
+        .trust-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trust-section h3 {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            opacity: 0.7;
+            filter: grayscale(1);
+            transition: all 0.3s;
+        }
+
+        .partners-grid:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        .partner-logo {
+            font-size: 2.5rem;
+            transition: transform 0.3s;
+            cursor: pointer;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.2);
+        }
+
+        .partner-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-badges {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arthi Raj",
+      "url": "https://cloudxai.io",
+      "jobTitle": "AI Cloud Architect & DevOps Expert",
+      "description": "Expert in AI-powered cloud solutions, AWS Bedrock, Azure DevOps, self-healing CI/CD, and intelligent automation",
+      "email": "arthi.raj1997@gmail.com",
+      "telephone": "+917806884641",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/arthiraj",
+        "https://github.com/arthiraj"
+      ],
+      "knowsAbout": [
+        "AWS Cloud Architecture",
+        "Azure DevOps",
+        "Amazon Bedrock",
+        "AI/ML Integration",
+        "Self-Healing CI/CD",
+        "Terraform",
+        "Kubernetes",
+        "React Native",
+        "Python",
+        "Cloud Automation",
+        "DevOps"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Your University Name"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CloudXAI",
+      "description": "AI Cloud Architecture and DevOps Solutions",
+      "url": "https://cloudxai.io",
+      "priceRange": "$$",
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "AI Cloud Architecture",
+        "DevOps Consulting",
+        "Cloud Migration",
+        "AI/ML Integration",
+        "Infrastructure Automation"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <span>🚀</span> Arthi Raj
+            </a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="auth-btn login" onclick="openLoginModal()">🔓 Login</button>
+                <button class="auth-btn signup" onclick="openSignupModal()">✨ Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Sliding Text Inside Hero -->
+        <div class="marquee-container">
+            <div class="marquee">
+                <div class="marquee-item">
+                    <span>AWS Lambda</span>
+                    <span class="marquee-dot"></span>
+                    <span>Bedrock AI</span>
+                    <span class="marquee-dot"></span>
+                    <span>Azure DevOps</span>
+                    <span class="marquee-dot"></span>
+                    <span>Terraform</span>
+                    <span class="marquee-dot"></span>
+                    <span>Kubernetes</span>
+                    <span class="marquee-dot"></span>
+                    <span>React Native</span>
+                    <span class="marquee-dot"></span>
+                    <span>Python</span>
+                    <span class="marquee-dot"></span>
+                    <span>CI/CD Pipeline</span>
+                    <span class="marquee-dot"></span>
+                    <span>Microservices</span>
+                    <span class="marquee-dot"></span>
+                    <span>DynamoDB</span>
+                    <span class="marquee-dot"></span>
+                    <span>Docker</span>
+                    <span class="marquee-dot"></span>
+                    <span>Automation</span>
+                    <span class="marquee-dot"></span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item">
+                    <span>AWS Lambda</span>
+                    <span class="marquee-dot"></span>
+                    <span>Bedrock AI</span>
+                    <span class="marquee-dot"></span>
+                    <span>Azure DevOps</span>
+                    <span class="marquee-dot"></span>
+                    <span>Terraform</span>
+                    <span class="marquee-dot"></span>
+                    <span>Kubernetes</span>
+                    <span class="marquee-dot"></span>
+                    <span>React Native</span>
+                    <span class="marquee-dot"></span>
+                    <span>Python</span>
+                    <span class="marquee-dot"></span>
+                    <span>CI/CD Pipeline</span>
+                    <span class="marquee-dot"></span>
+                    <span>Microservices</span>
+                    <span class="marquee-dot"></span>
+                    <span>DynamoDB</span>
+                    <span class="marquee-dot"></span>
+                    <span>Docker</span>
+                    <span class="marquee-dot"></span>
+                    <span>Automation</span>
+                    <span class="marquee-dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>Arthi Raj</h1>
+            <p class="tagline">AI Cloud Architect • Full-Stack Developer • DevOps Engineer</p>
+            <p class="subtitle">
+                Expertise in transforming ideas into intelligent cloud solutions across AWS, Azure, and GCP.
+                Specialized in AI-powered automation, mobile applications, and enterprise SaaS platforms.
+            </p>
+
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Production Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Cloud Platforms</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Automation Focus</span>
+                </div>
+            </div>
+
+            <!-- Services Banner Inside Hero -->
+            <div class="services-banner">
+                <h2>🚀 We Build Digital Services With Excellence</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>UI/UX Design</h3>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Web Dev</h3>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>Brand Identity</h3>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">☁️</div>
+                        <h3>Growth Hacking</h3>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>DevOps Strategy</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects & Solutions</h2>
+        <p class="section-description">
+            Enterprise-grade solutions spanning AI automation, cloud infrastructure, and mobile applications
+        </p>
+
+        <div class="projects-grid">
+            <!-- Project 1: Self-Healing CI/CD -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">Production</span>
+                    <span class="project-icon">🤖</span>
+                    <h3>Self-Healing CI/CD Pipeline</h3>
+                    <p class="project-subtitle">AI-Powered Build Failure Resolution</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        Intelligent system that automatically detects, analyzes, and fixes build failures
+                        using Amazon Bedrock. Reduces MTTR by 90% with zero manual intervention.
+                    </p>
+                    <ul class="project-features">
+                        <li>Real-time webhook integration</li>
+                        <li>AI root cause analysis</li>
+                        <li>Automatic PR creation</li>
+                        <li>Teams notification system</li>
+                        <li>Retry logic with learning</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">AWS Lambda</span>
+                        <span class="tech-badge">Bedrock AI</span>
+                        <span class="tech-badge">Azure DevOps</span>
+                        <span class="tech-badge">DynamoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link locked" onclick="openLoginModal()">
+                            🔒 View Architecture
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Bedrock Teams Bot -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">AI/ML</span>
+                    <span class="project-icon">💬</span>
+                    <h3>Bedrock Teams Integration</h3>
+                    <p class="project-subtitle">Enterprise AI Assistant</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        Intelligent Microsoft Teams bot powered by Amazon Bedrock that provides
+                        real-time AI assistance, code reviews, and natural language DevOps commands.
+                    </p>
+                    <ul class="project-features">
+                        <li>Azure Bot Framework integration</li>
+                        <li>Bedrock Agent invocation</li>
+                        <li>Multi-turn conversations</li>
+                        <li>Secure authentication flow</li>
+                        <li>API Gateway + Lambda backend</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">Bedrock</span>
+                        <span class="tech-badge">Teams API</span>
+                        <span class="tech-badge">Lambda</span>
+                        <span class="tech-badge">API Gateway</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link locked" onclick="openLoginModal()">
+                            🔒 View Flow Diagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Resource Provisioning + Validator -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">DevOps</span>
+                    <span class="project-icon">🔧</span>
+                    <h3>Automated Resource Provisioning</h3>
+                    <p class="project-subtitle">Terraform + Lambda Validator + Azure Pipeline</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        End-to-end infrastructure provisioning system with validation gates, approval
+                        workflows, and automated deployment via Azure Pipelines integrated with AWS.
+                    </p>
+                    <ul class="project-features">
+                        <li>JIRA ticket auto-creation</li>
+                        <li>Admin approval gate</li>
+                        <li>Terraform IaC provisioning</li>
+                        <li>Lambda validation checks</li>
+                        <li>Teams status updates</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Azure Pipeline</span>
+                        <span class="tech-badge">Lambda</span>
+                        <span class="tech-badge">JIRA API</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link locked" onclick="openLoginModal()">
+                            🔒 View Architecture
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: S3 Reclaim System -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">Cost Optimization</span>
+                    <span class="project-icon">💾</span>
+                    <h3>S3 Storage Reclaim System</h3>
+                    <p class="project-subtitle">Multi-Account Cost Optimization</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        Automated system for identifying unused S3 storage across AWS accounts,
+                        implementing lifecycle policies, and reducing storage costs by 40%.
+                    </p>
+                    <ul class="project-features">
+                        <li>Cross-account S3 scanning</li>
+                        <li>Usage pattern analysis</li>
+                        <li>Automated lifecycle rules</li>
+                        <li>Cost impact reporting</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">Lambda</span>
+                        <span class="tech-badge">S3</span>
+                        <span class="tech-badge">EventBridge</span>
+                        <span class="tech-badge">CloudWatch</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link locked" onclick="openLoginModal()">
+                            🔒 View Deployment
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Bus Finder Mobile App -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">Mobile</span>
+                    <span class="project-icon">🚌</span>
+                    <h3>Bus Finder Mobile App</h3>
+                    <p class="project-subtitle">Real-Time Transit Tracking</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        Mobile application with Google Maps integration for real-time bus tracking,
+                        route planning, and ETA calculations with offline support.
+                    </p>
+                    <ul class="project-features">
+                        <li>Google Maps API integration</li>
+                        <li>Real-time GPS tracking</li>
+                        <li>Route optimization</li>
+                        <li>Push notifications</li>
+                        <li>Offline map caching</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Google Maps</span>
+                        <span class="tech-badge">Firebase</span>
+                        <span class="tech-badge">GCP APIs</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Multi-Cloud DevOps Platform -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-badge">Enterprise</span>
+                    <span class="project-icon">🌐</span>
+                    <h3>Multi-Cloud DevOps Platform</h3>
+                    <p class="project-subtitle">AWS + Azure + GCP Orchestration</p>
+                </div>
+                <div class="project-body">
+                    <p>
+                        Unified platform for managing infrastructure across AWS, Azure, and GCP
+                        with centralized monitoring, cost tracking, and compliance validation.
+                    </p>
+                    <ul class="project-features">
+                        <li>Multi-cloud abstraction layer</li>
+                        <li>Unified cost dashboard</li>
+                        <li>Cross-cloud networking</li>
+                        <li>Compliance automation</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Azure</span>
+                        <span class="tech-badge">GCP</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link locked" onclick="openLoginModal()">
+                            🔒 View Architecture
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Expertise</h2>
+        <p class="section-description">
+            Deep expertise across cloud platforms, AI/ML, mobile development, and DevOps practices
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><span>☁️</span> AWS Cloud</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Lambda</span>
+                    <span class="skill-tag">Bedrock</span>
+                    <span class="skill-tag">API Gateway</span>
+                    <span class="skill-tag">DynamoDB</span>
+                    <span class="skill-tag">S3</span>
+                    <span class="skill-tag">CloudWatch</span>
+                    <span class="skill-tag">EventBridge</span>
+                    <span class="skill-tag">IAM</span>
+                    <span class="skill-tag">EC2</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>🔷</span> Azure Cloud</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Azure DevOps</span>
+                    <span class="skill-tag">App Services</span>
+                    <span class="skill-tag">Azure Functions</span>
+                    <span class="skill-tag">VNet</span>
+                    <span class="skill-tag">Load Balancer</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">Bot Service</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>🌐</span> GCP & APIs</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Google Maps API</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Cloud Functions</span>
+                    <span class="skill-tag">GCP Storage</span>
+                    <span class="skill-tag">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>🤖</span> AI & Machine Learning</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Amazon Bedrock</span>
+                    <span class="skill-tag">Claude AI</span>
+                    <span class="skill-tag">Nova Models</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">RAG Systems</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>📱</span> Mobile Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">iOS/Android</span>
+                    <span class="skill-tag">Google Maps SDK</span>
+                    <span class="skill-tag">Firebase</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>🔧</span> DevOps & IaC</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>💻</span> Programming</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">PowerShell</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><span>🔗</span> Integrations</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Teams</span>
+                    <span class="skill-tag">JIRA</span>
+                    <span class="skill-tag">Slack</span>
+                    <span class="skill-tag">Webhooks</span>
+                    <span class="skill-tag">GraphQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section (Password Protected) -->
+    <section id="architecture">
+        <h2>🔒 Solution Architectures</h2>
+        <p class="section-description">
+            Detailed architecture diagrams and flow charts (Protected Content)
+        </p>
+
+        <div class="architecture-grid">
+            <div class="architecture-card" id="arch-card">
+                <div style="position: relative;">
+                    <div class="architecture-overlay">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">🔐 Protected Content</h3>
+                        <p style="color: var(--gray); margin-bottom: 2rem;">
+                            Sign up or login to view detailed architecture diagrams
+                        </p>
+                        <button class="unlock-btn" onclick="openLoginModal()">
+                            🔓 Unlock Architectures
+                        </button>
+                    </div>
+                    <div style="filter: blur(8px);">
+                        <h3>Self-Healing CI/CD Architecture</h3>
+                        <div class="architecture-diagram">
+                            <p style="color: var(--gray); padding: 3rem;">
+                                📊 Architecture Diagram<br>
+                                Event-driven serverless architecture<br>
+                                Azure DevOps → API Gateway → Lambda → Bedrock → Teams
+                            </p>
+                        </div>
+
+                        <h3>Resource Provisioning Flow</h3>
+                        <div class="architecture-diagram">
+                            <p style="color: var(--gray); padding: 3rem;">
+                                🔄 Flow Diagram<br>
+                                Teams → JIRA → Approval → Terraform → AWS → Validation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let's Build Something Amazing</h2>
+        <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.9;">
+            Interested in collaboration or discussing cloud solutions? Let's connect!
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <span>Email</span>
+                <a href="mailto:arthi.raj1997@gmail.com">arthi.raj1997@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">💼</span>
+                <span>LinkedIn</span>
+                <a href="https://linkedin.com/in/arthiraj" target="_blank">linkedin.com/in/arthiraj</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">🐙</span>
+                <span>GitHub</span>
+                <a href="https://github.com/arthiraj" target="_blank">github.com/arthiraj</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">📱</span>
+                <span>Phone</span>
+                <a href="tel:+917806884641">+91 7806884641</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Arthi Raj. Crafted with innovation and passion for cloud excellence.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">AWS Certified • Azure Certified • Cloud DevOps Expert</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeLoginModal()">&times;</span>
+            <h3>🔓 Login to View Architectures</h3>
+            <p style="color: var(--gray); margin-bottom: 2rem;">
+                Enter your credentials to access protected content
+            </p>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray);">
+                    Don't have an account? <a href="#" onclick="closeLoginModal(); openSignupModal();" style="color: var(--primary); font-weight: 600;">Sign Up</a>
+                </p>
+            </form>
+            <div class="success-message" id="loginSuccess">
+                ✅ Login successful! Architectures unlocked.
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeSignupModal()">&times;</span>
+            <h3>✨ Create Your Account</h3>
+            <p style="color: var(--gray); margin-bottom: 2rem;">
+                Sign up to access exclusive architecture diagrams and detailed documentation
+            </p>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Company/Organization</label>
+                    <input type="text" id="signupCompany" placeholder="Your Company">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a strong password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray);">
+                    Already have an account? <a href="#" onclick="closeSignupModal(); openLoginModal();" style="color: var(--primary); font-weight: 600;">Login</a>
+                </p>
+            </form>
+            <div class="success-message" id="signupSuccess">
+                ✅ Account created! Check your email for confirmation.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('active');
+        }
+
+        function openSignupModal() {
+            document.getElementById('signupModal').classList.add('active');
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signupModal').classList.remove('active');
+        }
+
+        // Login Handler
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Store credentials (in production, this would be server-side)
+            localStorage.setItem('userLoggedIn', 'true');
+            localStorage.setItem('userEmail', email);
+
+            // Show success message
+            document.getElementById('loginSuccess').classList.add('show');
+
+            // Unlock architectures
+            setTimeout(() => {
+                unlockArchitectures();
+                closeLoginModal();
+            }, 1500);
+        }
+
+        // Signup Handler
+        function handleSignup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const company = document.getElementById('signupCompany').value;
+            const password = document.getElementById('signupPassword').value;
+
+            // Send email notification (simulate with mailto)
+            const subject = `New Portfolio Signup: ${name}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ACompany: ${company}%0D%0APassword: ${password}%0D%0A%0D%0ASignup Date: ${new Date().toLocaleString()}`;
+
+            // In production, this would be an API call to your backend
+            // For now, we'll use mailto as a simple notification
+            window.location.href = `mailto:arthi.raj1997@gmail.com?subject=${subject}&body=${body}`;
+
+            // Store signup info
+            localStorage.setItem('userLoggedIn', 'true');
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+
+            // Show success message
+            document.getElementById('signupSuccess').classList.add('show');
+
+            // Unlock architectures
+            setTimeout(() => {
+                unlockArchitectures();
+                closeSignupModal();
+            }, 2000);
+        }
+
+        // Unlock Architectures
+        function unlockArchitectures() {
+            const archCard = document.getElementById('arch-card');
+            archCard.classList.remove('locked');
+            archCard.innerHTML = `
+                <h3>🤖 Self-Healing CI/CD Architecture</h3>
+                <p style="color: var(--gray); margin-bottom: 1rem;">
+                    Event-driven serverless architecture for automated build failure resolution
+                </p>
+                <div class="architecture-diagram">
+                    <p style="color: var(--gray); padding: 2rem; text-align: left; line-height: 2;">
+                        <strong style="display: block; margin-bottom: 1rem; font-size: 1.2rem;">Flow:</strong>
+                        1. Azure DevOps Build Fails → Webhook Triggered<br>
+                        2. API Gateway receives event<br>
+                        3. Lambda extracts build logs<br>
+                        4. Bedrock AI analyzes root cause<br>
+                        5. Lambda creates PR with fix<br>
+                        6. Teams notifies admin (approval card)<br>
+                        7. Teams notifies users (status update)<br>
+                        8. PR merged → Build verification<br><br>
+                        <strong>Key Components:</strong> Lambda, Bedrock, DynamoDB, API Gateway, Teams Webhooks
+                    </p>
+                </div>
+
+                <h3 style="margin-top: 2rem;">🔧 Resource Provisioning Architecture</h3>
+                <p style="color: var(--gray); margin-bottom: 1rem;">
+                    Automated infrastructure provisioning with approval gates
+                </p>
+                <div class="architecture-diagram">
+                    <p style="color: var(--gray); padding: 2rem; text-align: left; line-height: 2;">
+                        <strong style="display: block; margin-bottom: 1rem; font-size: 1.2rem;">Flow:</strong>
+                        1. User initiates request in Teams<br>
+                        2. JIRA ticket automatically created<br>
+                        3. Admin approval gate (via Teams)<br>
+                        4. Terraform triggered (Azure Pipeline)<br>
+                        5. AWS resources provisioned<br>
+                        6. Lambda validator runs checks<br>
+                        7. Status updated back to Teams<br><br>
+                        <strong>Key Components:</strong> Azure Pipeline, Terraform, Lambda Validator, JIRA API, Teams Bot
+                    </p>
+                </div>
+
+                <h3 style="margin-top: 2rem;">💬 Bedrock Teams Integration</h3>
+                <p style="color: var(--gray); margin-bottom: 1rem;">
+                    AI-powered Teams bot architecture
+                </p>
+                <div class="architecture-diagram">
+                    <p style="color: var(--gray); padding: 2rem; text-align: left; line-height: 2;">
+                        <strong style="display: block; margin-bottom: 1rem; font-size: 1.2rem;">Flow:</strong>
+                        1. User sends message in Teams<br>
+                        2. Azure Bot Service forwards to API Gateway<br>
+                        3. Lambda receives and processes request<br>
+                        4. Bedrock Agent invoked with context<br>
+                        5. AI generates response<br>
+                        6. Lambda returns formatted reply<br>
+                        7. Teams displays message to user<br><br>
+                        <strong>Key Components:</strong> Azure Bot, API Gateway, Lambda, Bedrock Agent, Bot Framework
+                    </p>
+                </div>
+            `;
+
+            // Update all locked project links
+            document.querySelectorAll('.project-link.locked').forEach(link => {
+                link.classList.remove('locked');
+                link.innerHTML = '✅ View Architecture';
+                link.onclick = () => {
+                    document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' });
+                };
+            });
+        }
+
+        // Check if user is already logged in
+        window.addEventListener('load', () => {
+            if (localStorage.getItem('userLoggedIn') === 'true') {
+                unlockArchitectures();
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+
+        // Counter Animation
+        function animateCounter(element, target, suffix = '', duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16); // 60 FPS
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + suffix;
+                }
+            }, 16);
+        }
+
+        // Trigger counter animation on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    const statNumbers = document.querySelectorAll('.stat-number');
+
+                    // Animate each counter
+                    animateCounter(statNumbers[0], 15, '+', 2000);
+                    animateCounter(statNumbers[1], 3, '', 1500);
+                    animateCounter(statNumbers[2], 100, '%', 2000);
+                }
+            });
+        }, observerOptions);
+
+        // Observe the stats section
+        window.addEventListener('load', () => {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+
+</body>
+</html>
