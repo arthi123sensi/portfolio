@@ -1152,12 +1152,66 @@
             opacity: 0.8;
         }
 
-        /* Footer */
+        /* Footer - Professional Style */
         footer {
-            background: var(--dark);
+            background: #0f1729;
             color: white;
+            padding: 4rem 2rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
             text-align: center;
-            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
         /* Trust Indicators / Partners Section */
@@ -1235,6 +1289,20 @@
             .certification-badges {
                 flex-direction: column;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .service-card {
+                width: 100%;
+            }
         }
     </style>
     <!-- Structured Data (JSON-LD) for SEO -->
@@ -1242,20 +1310,16 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "CloudXAI",
-      "url": "https://cloudxai.io",
-      "logo": "https://cloudxai.io/logo.png",
+      "name": "CloudAI Solutions",
+      "url": "https://cloudaisolutions.org",
+      "logo": "https://cloudaisolutions.org/logo.png",
       "description": "Enterprise-grade AI cloud solutions, AWS Bedrock integration, self-healing CI/CD, and intelligent automation services",
-      "email": "info@cloudxai.io",
+      "email": "info@cloudaisolutions.org",
       "telephone": "+917806884641",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "India"
       },
-      "sameAs": [
-        "https://linkedin.com/company/cloudxai",
-        "https://github.com/cloudxai"
-      ],
       "knowsAbout": [
         "AWS Cloud Architecture",
         "Azure DevOps",
@@ -1795,19 +1859,7 @@
             <div class="contact-item">
                 <span class="icon">📧</span>
                 <span>Email</span>
-                <a href="mailto:arthi.raj1997@gmail.com">arthi.raj1997@gmail.com</a>
-            </div>
-
-            <div class="contact-item">
-                <span class="icon">💼</span>
-                <span>LinkedIn</span>
-                <a href="https://linkedin.com/in/arthiraj" target="_blank">linkedin.com/in/arthiraj</a>
-            </div>
-
-            <div class="contact-item">
-                <span class="icon">🐙</span>
-                <span>GitHub</span>
-                <a href="https://github.com/arthiraj" target="_blank">github.com/arthiraj</a>
+                <a href="mailto:info@cloudaisolutions.org">info@cloudaisolutions.org</a>
             </div>
 
             <div class="contact-item">
@@ -1815,13 +1867,52 @@
                 <span>Phone</span>
                 <a href="tel:+917806884641">+91 7806884641</a>
             </div>
+
+            <div class="contact-item">
+                <span class="icon">💬</span>
+                <span>Support</span>
+                <a href="mailto:support@cloudaisolutions.org">support@cloudaisolutions.org</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 CloudAI Solutions. Enterprise Cloud Solutions & AI Automation.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.7;">AWS Partner • Azure Certified • Enterprise Support</p>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>☁️ CloudAI Solutions</h3>
+                <p>
+                    We are in the business of intelligent cloud solutions and AI-powered automation.
+                    For years we have been partnering with enterprises, with an engineering mindset,
+                    delivering what's relevant, and winning their trust through cutting-edge DevOps and cloud architecture.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#home">About us</a></li>
+                    <li><a href="#projects">Services</a></li>
+                    <li><a href="#projects">Industries</a></li>
+                    <li><a href="#contact">Careers</a></li>
+                    <li><a href="#projects">Work</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#contact">Contact us</a></li>
+                    <li><a href="#projects">Case Studies</a></li>
+                    <li><a href="#skills">Privacy Policy</a></li>
+                    <li><a href="#skills">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CloudAI Solutions. All rights reserved worldwide.</p>
+        </div>
     </footer>
 
     <!-- Login Modal -->
